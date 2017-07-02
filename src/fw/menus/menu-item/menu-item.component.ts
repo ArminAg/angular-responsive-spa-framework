@@ -1,12 +1,26 @@
 import { IMenuItem, MenuService } from './../../services/menu.service';
 
-import { Component, OnInit, Input, HostBinding, HostListener, ElementRef, Renderer } from '@angular/core';
+import {
+  Component, OnInit, Input, HostBinding, HostListener, ElementRef, Renderer,
+  trigger, transition, style, animate
+} from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'fw-menu-item',
   templateUrl: './menu-item.component.html',
-  styleUrls: ['./menu-item.component.css']
+  styleUrls: ['./menu-item.component.css'],
+  animations: [
+    trigger('visibilityChanged', [
+      transition(':enter', [ // :enter is alias to 'void => *'
+        style({ opacity: 0 }),
+        animate(250, style({ opacity: 1 }))
+      ]),
+      transition(':leave', [ // :leave is alias to '* => void'
+        animate(100, style({ opacity: 0 }))
+      ])
+    ])
+  ]
 })
 export class MenuItemComponent implements OnInit {
   @Input() item = <IMenuItem>null;
