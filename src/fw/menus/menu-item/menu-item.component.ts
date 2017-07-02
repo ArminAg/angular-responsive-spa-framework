@@ -51,7 +51,7 @@ export class MenuItemComponent implements OnInit {
       }
     } else if (this.item.route) {
       // Force horizontal menus to close by sending a mouseleave event
-      const newEvent = new MouseEvent('mouseleave', { bubbles: true });
+      let newEvent = new MouseEvent('mouseleave', { bubbles: true });
       this.renderer.invokeElementMethod(this.el.nativeElement, 'dispatchEvent', [newEvent]);
       this.router.navigate(['/' + this.item.route]);
     }
