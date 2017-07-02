@@ -1,3 +1,4 @@
+import { StatusBarComponent } from './status-bar/status-bar.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,7 +16,8 @@ import { FrameworkBodyComponent } from './framework-body/framework-body.componen
     FrameworkBodyComponent,
     ContentComponent,
     TitleBarComponent,
-    TopBarComponent
+    TopBarComponent,
+    StatusBarComponent
   ],
   providers: [
     FrameworkConfigService
