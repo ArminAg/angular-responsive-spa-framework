@@ -1,4 +1,4 @@
-import { IMenuItem } from './../../services/menu.service';
+import { IMenuItem, MenuService } from './../../services/menu.service';
 
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -10,7 +10,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MenuItemComponent implements OnInit {
   @Input() item = <IMenuItem>null;
 
-  constructor() { }
+  constructor(private menuService: MenuService) { }
 
   ngOnInit() {
   }
