@@ -7,6 +7,7 @@ import { FrameworkBodyComponent } from './framework-body/framework-body.componen
 import { StatusBarComponent } from './status-bar/status-bar.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { MenuComponent } from './menus/menu/menu.component';
+import { MenuItemComponent } from './menus/menu-item/menu-item.component';
 
 import { FrameworkConfigService } from './services/framework-config.service';
 import { ScreenService } from './services/screen.service';
@@ -27,7 +28,8 @@ import { ScreenLargeDirective } from './directives/screen-large.directive';
     StatusBarComponent,
     ScreenLargeDirective,
     ScreenBelowLargeDirective,
-    MenuComponent
+    MenuComponent,
+    MenuItemComponent
   ],
   providers: [
     FrameworkConfigService,
