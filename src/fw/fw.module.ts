@@ -1,3 +1,4 @@
+import { TopBarComponent } from './top-bar/top-bar.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -13,7 +14,8 @@ import { FrameworkBodyComponent } from './framework-body/framework-body.componen
   declarations: [
     FrameworkBodyComponent,
     ContentComponent,
-    TitleBarComponent
+    TitleBarComponent,
+    TopBarComponent
   ],
   providers: [
     FrameworkConfigService
