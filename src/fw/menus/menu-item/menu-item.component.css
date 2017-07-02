@@ -26,6 +26,10 @@
   color: white;
 }
 
+:host(.vertical-menu.in-popup) {
+  padding-left: 16px;
+}
+
 span {
   pointer-events: none;
 }
@@ -58,5 +62,5 @@ span {
 }
 
 .router-link-active.vertical-menu {
-    background-color: green;
+  background-color: green;
 }

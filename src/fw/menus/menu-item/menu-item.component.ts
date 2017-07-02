@@ -1,6 +1,7 @@
 import { IMenuItem, MenuService } from './../../services/menu.service';
 
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostBinding, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'fw-menu-item',
@@ -9,10 +10,52 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MenuItemComponent implements OnInit {
   @Input() item = <IMenuItem>null;
+  @HostBinding('class.parent-is-popup')
+  @Input() parentIsPopup = true;
+  isActiveRoute = false;
 
-  constructor(private menuService: MenuService) { }
+  mouseInItem = false;
+  mouseInPopup = false;
+  popupLeft = 0;
+  popupTop = 34;
+
+  constructor(
+    private router: Router,
+    private menuService: MenuService
+  ) { }
 
   ngOnInit() {
   }
 
+  onPopupMouseEnter(event): void {
+    if (!this.menuService.isVertical) {
+      this.mouseInPopup = true;
+    }
+  }
+
+  onPopupMouseLeave(event): void {
+    if (!this.menuService.isVertical) {
+      this.mouseInPopup = false;
+    }
+  }
+
+  @HostListener('mouseleave', ['$event'])
+  onMouseLeave(event): void {
+    if (!this.menuService.isVertical) {
+      this.mouseInItem = false;
+    }
+  }
+
+  @HostListener('mouseenter')
+  onMouseEnter(): void {
+    if (!this.menuService.isVertical) {
+      if (this.item.submenu) {
+        this.mouseInItem = true;
+        if (this.parentIsPopup) {
+          this.popupLeft = 160;
+          this.popupTop = 0;
+        }
+      }
+    }
+  }
 }
