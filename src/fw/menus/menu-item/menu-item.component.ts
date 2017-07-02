@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./menu-item.component.css']
 })
 export class MenuItemComponent implements OnInit {
-  @Input() item: IMenuItem;
+  @Input() item = <IMenuItem>null;
 
   constructor() { }
 
