@@ -1,7 +1,7 @@
 import { IMenuItem, MenuService } from './../../services/menu.service';
 
 import { Component, OnInit, Input, HostBinding, HostListener, ElementRef, Renderer } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'fw-menu-item',
@@ -26,7 +26,20 @@ export class MenuItemComponent implements OnInit {
     private renderer: Renderer
   ) { }
 
+  checkActiveRoute(route: string) {
+    this.isActiveRoute = (route == '/' + this.item.route);
+  }
+
   ngOnInit() {
+    this.checkActiveRoute(this.router.url);
+
+    this.router.events
+      .subscribe((event) => {
+        if (event instanceof NavigationEnd) {
+          this.checkActiveRoute(event.url);
+          // console.log(event.url + ' ' + this.item.route + ' ' + this.isActiveRoute);
+        }
+      });
   }
 
   @HostListener('click', ['$event'])
