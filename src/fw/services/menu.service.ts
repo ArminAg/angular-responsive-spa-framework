@@ -11,6 +11,12 @@ export interface IMenuItem {
 export class MenuService {
     items: Array<IMenuItem>;
     isVertical = true;
+    showingLeftSideMenu = false;
 
     constructor() { }
+
+    toggleLeftSideMenu(): void {
+        this.isVertical = true;
+        this.showingLeftSideMenu = !this.showingLeftSideMenu;
+    }
 }
