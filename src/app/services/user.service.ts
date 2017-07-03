@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 
@@ -15,5 +16,6 @@ export class UserService implements UserApi {
         console.log('UserService.signIn: ' + username + ' ' + password + ' ' + rememberMe);
         this.isAuthenticated = true;
         return Observable.of({}).delay(2000);
+        // return Observable.of({}).delay(2000).flatMap(x => Observable.throw('Invalid User Name and/or Password'));
     }
 }
