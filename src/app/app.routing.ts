@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { SettingsComponent } from './settings/settings.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SignInComponent } from './../fw/users/sign-in/sign-in.component';
+import { RegisterUserComponent } from './../fw/users/register-user/register-user.component';
 import { AuthenticatedUserComponent } from './authenticated-user/authenticated-user.component';
 import { CountryMaintComponent } from './country-maint/country-maint.component';
 import { CountryDetailComponent } from './country-detail/country-detail.component';
@@ -10,6 +11,7 @@ import { CountryListComponent } from './country-list/country-list.component';
 
 export const appRoutes: Routes = [
     { path: 'signin', component: SignInComponent },
+    { path: 'register', component: RegisterUserComponent },
     {
         path: 'authenticated', component: AuthenticatedUserComponent,
         children: [
