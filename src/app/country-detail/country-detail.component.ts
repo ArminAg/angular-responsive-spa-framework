@@ -68,7 +68,7 @@ export class CountryDetailComponent implements OnInit {
     this.errorMessage = null;
     this.dataService.updateCountry(country).subscribe(
       c => this.router.navigate(['/authenticated/country-maint']),
-      err => this.errorMessage = 'Error updateing country'
+      err => this.errorMessage = 'Error updating country'
     );
   }
 }
