@@ -1,3 +1,4 @@
+import { PanelComponent } from './../app/panel/panel.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -46,7 +47,8 @@ import { ScreenLargeDirective } from './directives/screen-large.directive';
     SignInComponent,
     RegisterUserComponent,
     DynamicFormComponent,
-    DynamicFieldComponent
+    DynamicFieldComponent,
+    PanelComponent
   ],
   providers: [
     FrameworkConfigService,
@@ -55,7 +57,8 @@ import { ScreenLargeDirective } from './directives/screen-large.directive';
   ],
   exports: [
     FrameworkBodyComponent,
-    DynamicFormComponent
+    DynamicFormComponent,
+    PanelComponent
   ]
 })
 export class FwModule { }
