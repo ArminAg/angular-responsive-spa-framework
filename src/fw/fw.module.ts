@@ -1,4 +1,3 @@
-import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -15,6 +14,8 @@ import { MenuItemComponent } from './menus/menu-item/menu-item.component';
 import { PopupMenuComponent } from './menus/popup-menu/popup-menu.component';
 import { SignInComponent } from './users/sign-in/sign-in.component';
 import { RegisterUserComponent } from './users/register-user/register-user.component';
+import { DynamicFieldComponent } from './dynamic-forms/dynamic-field/dynamic-field.component';
+import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.component';
 
 import { FrameworkConfigService } from './services/framework-config.service';
 import { ScreenService } from './services/screen.service';
@@ -44,7 +45,8 @@ import { ScreenLargeDirective } from './directives/screen-large.directive';
     PopupMenuComponent,
     SignInComponent,
     RegisterUserComponent,
-    DynamicFormComponent
+    DynamicFormComponent,
+    DynamicFieldComponent
   ],
   providers: [
     FrameworkConfigService,
