@@ -29,4 +29,28 @@ export class CountryMaintComponent implements OnInit {
     this.deleteId = null;
   }
 
+  createCountry() {
+    this.router.navigate(['/authenticated/country-detail', 0, 'create']);
+  }
+
+  deleteCountry(id: number) {
+    this.isDeleting = true;
+    this.dataService.deleteCountry(id).subscribe(
+      c => this.cancelDelete(),
+      err => { this.deleteError = err; this.isDeleting = false; }
+    );
+  }
+
+  deleteCountryQuestion(id: number) {
+    this.deleteError = null;
+    this.deleteId = id;
+  }
+
+  editCountry(id: number) {
+    this.router.navigate(['/authenticated/country-detail', id, 'edit']);
+  }
+
+  showCountryDetail(id: number) {
+    this.router.navigate(['/authenticated/countrz-detail', id, 'details']);
+  }
 }
