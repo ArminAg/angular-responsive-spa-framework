@@ -1,8 +1,9 @@
+import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { TitleBarComponent } from './title-bar/title-bar.component';
 import { ContentComponent } from './content/content.component';
@@ -27,7 +28,8 @@ import { ScreenLargeDirective } from './directives/screen-large.directive';
     CommonModule,
     RouterModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     FrameworkBodyComponent,
@@ -41,7 +43,8 @@ import { ScreenLargeDirective } from './directives/screen-large.directive';
     MenuItemComponent,
     PopupMenuComponent,
     SignInComponent,
-    RegisterUserComponent
+    RegisterUserComponent,
+    DynamicFormComponent
   ],
   providers: [
     FrameworkConfigService,
@@ -49,7 +52,8 @@ import { ScreenLargeDirective } from './directives/screen-large.directive';
     MenuService
   ],
   exports: [
-    FrameworkBodyComponent
+    FrameworkBodyComponent,
+    DynamicFormComponent
   ]
 })
 export class FwModule { }
