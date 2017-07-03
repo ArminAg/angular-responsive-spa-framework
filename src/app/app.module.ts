@@ -1,3 +1,4 @@
+import { AppDataService } from './services/app-data.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -35,7 +36,8 @@ import { UserApi } from 'fw/users/user-api';
   providers: [
     UserService,
     { provide: UserApi, useExisting: UserService },
-    AuthGuard
+    AuthGuard,
+    AppDataService
   ],
   bootstrap: [AppComponent]
 })
