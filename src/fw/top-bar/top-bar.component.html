@@ -9,10 +9,11 @@
 
 <div *ngIf="frameworkConfigService.showLanguageSelector">
   <img class="flag-image" src="assets/flag-eng.png" alt="Flag">
-  <span>Armin</span><span class="glyphicon glyphicon-chevron-down"></span>
+  <span>EN</span><span class="glyphicon glyphicon-chevron-down"></span>
 </div>
 
 <div *ngIf="frameworkConfigService.showUserControls">
-  <span>Sign In</span>
+  <span>ARMIN</span>
+  <span class="sign-out" (click)="signOut()">SIGN OUT</span>
 </div>
 

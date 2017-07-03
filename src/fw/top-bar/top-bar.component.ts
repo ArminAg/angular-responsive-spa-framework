@@ -1,3 +1,4 @@
+import { UserApi } from 'fw/users/user-api';
 import { FrameworkConfigService } from './../services/framework-config.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
-  constructor(private frameworkConfigService: FrameworkConfigService) { }
+  constructor(
+    private frameworkConfigService: FrameworkConfigService,
+    private userApi: UserApi
+  ) { }
 
   ngOnInit() {
+  }
+
+  signOut() {
+    this.userApi.signOut();
   }
 
 }
