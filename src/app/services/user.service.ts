@@ -9,9 +9,7 @@ import { UserApi } from 'fw/users/user-api';
 export class UserService implements UserApi {
     isAuthenticated = true;
 
-    constructor(private router: Router) {
-
-    }
+    constructor(private router: Router) { }
 
     signIn(username: string, password: string, rememberMe: boolean): Observable<any> {
         console.log('UserService.signIn: ' + username + ' ' + password + ' ' + rememberMe);
