@@ -8,13 +8,16 @@ import { Injectable } from '@angular/core';
 export class AppDataService {
 
     private countries: Array<ICountry> = [
-        { id: 1, name: 'Australia', epiIndex: 87.67 },
-        { id: 2, name: 'Singapore', epiIndex: 87.67 },
-        { id: 3, name: 'Germany', epiIndex: 87.67 },
-        { id: 4, name: 'Spain', epiIndex: 87.67 },
-        { id: 5, name: 'Austria', epiIndex: 87.67 },
-        { id: 6, name: 'Sweden', epiIndex: 87.67 },
-        { id: 7, name: 'Norwa', epiIndex: 87.67 },
+        { id: 1, name: 'Switzerland', epiIndex: 87.67 },
+        { id: 2, name: 'Luxembourg', epiIndex: 83.29 },
+        { id: 3, name: 'Australia', epiIndex: 82.4 },
+        { id: 4, name: 'Singapore', epiIndex: 81.78 },
+        { id: 5, name: 'Czech Repblic', epiIndex: 81.47 },
+        { id: 6, name: 'Germany', epiIndex: 80.47 },
+        { id: 7, name: 'Spain', epiIndex: 79.09 },
+        { id: 8, name: 'Austria', epiIndex: 78.32 },
+        { id: 9, name: 'Sweden', epiIndex: 78.09 },
+        { id: 10, name: 'Norway', epiIndex: 78.04 }
     ];
 
     constructor(private userService: UserService) { }
