@@ -1,42 +1,50 @@
-
 :host {
-    display: block;
+  display: block;
 }
 
 .title-bar {
-    flex-grow: 1;
-    display: flex;
-    min-height: 80px;
+  flex-grow: 1;
+  display: flex;
+  min-height: 80px;
+  border-bottom: 2px solid #E3E3E3;
+}
+
+.large-image {
+  height: 50px;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding-left: 20px;
 }
 
 .menu-area {
-    display: flex; 
-    flex-direction: column; 
-    flex-grow: 1;
-    padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-right: 20px;
 }
 
 .title-bar-small {
-    flex-grow: 1;
-    display: flex;
-    min-height: 56px;
+  flex-grow: 1;
+  display: flex;
+  min-height: 56px;
+  border-bottom: 2px solid #E3E3E3;
 }
 
 .small-image-holder {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .small-image {
-    height: 50px;
+  height: 50px;
 }
 
 span {
-    margin-left: 10px;
-    margin-right: 20px;
-    font-size: 25px;
-    line-height: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
+  font-size: 25px;
+  line-height: 50px;
 }
-
-
-
-

@@ -1,4 +1,5 @@
 :host {
-    background-color: green;
-    min-height: 26px;
+    background-color: white;
+    border-top: 1px solid #E3E3E3;
+    min-height: 56px;
 }

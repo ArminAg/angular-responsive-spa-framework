@@ -1,10 +1,10 @@
 :host {
   position: absolute;
   display: inline-block;
-  width: 162px;
+  width: 171px;
   background-color: white;
-  border: 1px solid black;
-  box-shadow: 1px 1px 5px #aaa;
+  border: 1px solid #E3E3E3;
+  border-top: 2px solid #335F7D;
 }
 
 :host(.vertical-menu) {

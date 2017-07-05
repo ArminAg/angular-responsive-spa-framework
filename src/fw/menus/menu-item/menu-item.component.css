@@ -7,7 +7,7 @@
   padding: 0;
   font-size: 15px;
   line-height: 15px;
-  color: #666;
+  color: #9A9A9A;
   cursor: pointer;
   box-sizing: border-box;
   width: 100%;
@@ -21,9 +21,7 @@
 :host(.vertical-menu) {
   display: block;
   margin-left: 0;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  color: white;
+  color: #9A9A9A;
 }
 
 :host(.vertical-menu.in-popup) {
@@ -52,21 +50,11 @@ span {
 }
 
 .menu-item.vertical-menu {
-  padding: 6px 6px 6px 0;
+  padding: 20px 16px 20px 12px;
 }
 
+.router-link-active,
 .menu-item:hover {
-  background-color: #dfd;
-}
-
-.menu-item.vertical-menu:hover {
-  background-color: green;
-}
-
-.router-link-active {
-  background-color: #dfd;
-}
-
-.router-link-active.vertical-menu {
-  background-color: green;
+  background-color: #F7F7F7;
+  color: #335F7D;
 }
