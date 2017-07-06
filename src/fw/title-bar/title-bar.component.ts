@@ -1,5 +1,5 @@
-import { MenuService } from './../services/menu.service';
-import { ScreenService } from './../services/screen.service';
+import { MenuService } from './../_services/menu.service';
+import { ScreenService } from './../_services/screen.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

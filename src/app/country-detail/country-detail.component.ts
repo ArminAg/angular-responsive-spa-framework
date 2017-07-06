@@ -1,6 +1,6 @@
 import { FieldDefinition } from './../../fw/dynamic-forms/field-definition';
-import { AppDataService } from './../services/app-data.service';
-import { ICountry } from './../view-models/country';
+import { AppDataService } from './../_services/app-data.service';
+import { ICountry } from './../_view-models/country';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 

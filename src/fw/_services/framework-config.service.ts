@@ -5,8 +5,7 @@ export class FrameworkConfigService {
 
   showLanguageSelector = true;
   showUserControls = true;
-  showStatusBar = true;
-  showStatusBarBreakpoint = 0;
+  showFooter = true;
   socialIcons = new Array<IconFiles>();
 
   configure(settings: FrameworkConfigSettings): void {
@@ -23,7 +22,6 @@ export interface IconFiles {
 export interface FrameworkConfigSettings {
   showLanguageSelector?: boolean,
   showUserControls?: boolean,
-  showStatusBar?: boolean,
-  showStatusBarBreakpoint?: number,
+  showFooter?: boolean,
   socialIcons?: Array<IconFiles>
 }

@@ -1,6 +1,6 @@
 import { initialMenuItems } from './app.menu';
-import { MenuService } from './../fw/services/menu.service';
-import { FrameworkConfigService, FrameworkConfigSettings } from './../fw/services/framework-config.service';
+import { MenuService } from './../fw/_services/menu.service';
+import { FrameworkConfigService, FrameworkConfigSettings } from './../fw/_services/framework-config.service';
 
 import { Component } from '@angular/core';
 
@@ -21,9 +21,8 @@ export class AppComponent {
         { imageFile: 'assets/social-googleplus.png', alt: 'GooglePlus', link: 'http://www.googleplus.com' }
       ],
       showLanguageSelector: true,
-      showUserControls: true,
-      showStatusBar: true,
-      showStatusBarBreakpoint: 800
+      showUserControls: false,
+      showFooter: true
     };
 
     frameworkConfigService.configure(config);

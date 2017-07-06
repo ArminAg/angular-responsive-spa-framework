@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { AppDataService } from '../services/app-data.service';
-import { ICountry } from '../view-models/Country';
+import { AppDataService } from '../_services/app-data.service';
+import { ICountry } from '../_view-models/Country';
 
 @Component({
   selector: 'app-country-list',

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FrameworkConfigService } from './../_services/framework-config.service';
 
 @Component({
   selector: 'fw-framework-body',

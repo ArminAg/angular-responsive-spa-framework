@@ -1,4 +1,4 @@
-import { IMenuItem, MenuService } from './../../services/menu.service';
+import { IMenuItem, MenuService } from './../../_services/menu.service';
 
 import {
   Component, OnInit, Input, HostBinding, HostListener, ElementRef, Renderer,

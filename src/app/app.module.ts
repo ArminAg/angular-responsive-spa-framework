@@ -1,4 +1,4 @@
-import { AppDataService } from './services/app-data.service';
+import { AppDataService } from './_services/app-data.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -14,8 +14,8 @@ import { CountryMaintComponent } from './country-maint/country-maint.component';
 import { CountryListComponent } from './country-list/country-list.component';
 import { AuthenticatedUserComponent } from './authenticated-user/authenticated-user.component';
 
-import { AuthGuard } from './services/auth-guard.service';
-import { UserService } from './services/user.service';
+import { AuthGuard } from './_services/auth-guard.service';
+import { UserService } from './_services/user.service';
 import { UserApi } from 'fw/users/user-api';
 import { CountryPanelComponent } from './panels/country-panel/country-panel.component';
 import { ImagePanelComponent } from './panels/image-panel/image-panel.component';

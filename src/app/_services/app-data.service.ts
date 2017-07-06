@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 import { UserService } from './user.service';
-import { ICountry } from './../view-models/country';
+import { ICountry } from './../_view-models/country';
 
 import { Injectable } from '@angular/core';
 

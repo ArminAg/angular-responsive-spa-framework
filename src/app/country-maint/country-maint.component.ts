@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
-import { AppDataService } from './../services/app-data.service';
-import { ICountry } from './../view-models/country';
+import { AppDataService } from './../_services/app-data.service';
+import { ICountry } from './../_view-models/country';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

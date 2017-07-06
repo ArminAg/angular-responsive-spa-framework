@@ -1,5 +1,5 @@
 import { UserApi } from 'fw/users/user-api';
-import { FrameworkConfigService } from './../services/framework-config.service';
+import { FrameworkConfigService } from './../_services/framework-config.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

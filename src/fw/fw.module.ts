@@ -1,3 +1,4 @@
+import { FooterComponent } from './footer/footer.component';
 import { PanelComponent } from './panels/panel/panel.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -8,7 +9,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TitleBarComponent } from './title-bar/title-bar.component';
 import { ContentComponent } from './content/content.component';
 import { FrameworkBodyComponent } from './framework-body/framework-body.component';
-import { StatusBarComponent } from './status-bar/status-bar.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { MenuComponent } from './menus/menu/menu.component';
 import { MenuItemComponent } from './menus/menu-item/menu-item.component';
@@ -18,12 +18,12 @@ import { RegisterUserComponent } from './users/register-user/register-user.compo
 import { DynamicFieldComponent } from './dynamic-forms/dynamic-field/dynamic-field.component';
 import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.component';
 
-import { FrameworkConfigService } from './services/framework-config.service';
-import { ScreenService } from './services/screen.service';
-import { MenuService } from './services/menu.service';
+import { FrameworkConfigService } from './_services/framework-config.service';
+import { ScreenService } from './_services/screen.service';
+import { MenuService } from './_services/menu.service';
 
-import { ScreenBelowLargeDirective } from './directives/screen-below-large.directive';
-import { ScreenLargeDirective } from './directives/screen-large.directive';
+import { ScreenBelowLargeDirective } from './_directives/screen-below-large.directive';
+import { ScreenLargeDirective } from './_directives/screen-large.directive';
 
 @NgModule({
   imports: [
@@ -38,7 +38,7 @@ import { ScreenLargeDirective } from './directives/screen-large.directive';
     ContentComponent,
     TitleBarComponent,
     TopBarComponent,
-    StatusBarComponent,
+    FooterComponent,
     ScreenLargeDirective,
     ScreenBelowLargeDirective,
     MenuComponent,
