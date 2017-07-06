@@ -1,0 +1,15 @@
+.form-control {
+    box-shadow: none;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border: 2px solid #335F7D;
+    border-color: #335F7D;
+}
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  background-color: #F7F7F7;
+}
