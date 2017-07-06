@@ -31,7 +31,7 @@ export class MenuItemComponent implements OnInit {
   mouseInItem = false;
   mouseInPopup = false;
   popupLeft = 0;
-  popupTop = 36;
+  popupTop = 78;
 
   constructor(
     private router: Router,
@@ -96,7 +96,7 @@ export class MenuItemComponent implements OnInit {
       if (this.item.submenu) {
         this.mouseInItem = true;
         if (this.parentIsPopup) {
-          this.popupLeft = 169;
+          this.popupLeft = 173;
           this.popupTop = -2;
         }
       }

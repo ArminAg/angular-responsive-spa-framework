@@ -10,7 +10,7 @@ export interface IMenuItem {
 @Injectable()
 export class MenuService {
     items: Array<IMenuItem>;
-    isVertical = true;
+    isVertical = false;
     showingLeftSideMenu = false;
 
     constructor() { }

@@ -14,7 +14,6 @@
 }
 
 :host:not(.parent-is-popup) {
-  margin-left: 16px;
   width: auto;
 }
 
@@ -39,6 +38,14 @@ span {
   margin-left: 8px;
 }
 
+.glyphicon:first-of-type {
+  margin-left: 0;
+}
+
+.glyphicon:last-child {
+  margin-right: 0;
+}
+
 .glyphicon-menu-left,
 .glyphicon-menu-right,
 .glyphicon-menu-down {
@@ -46,11 +53,11 @@ span {
 }
 
 .menu-item {
-  padding: 10px 10px 10px 0;
+  padding: 31px 20px 31px 20px;
 }
 
 .menu-item.vertical-menu {
-  padding: 20px 16px 20px 12px;
+  padding: 31px 20px 31px 20px;
 }
 
 .router-link-active,
