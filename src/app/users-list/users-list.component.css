@@ -1,0 +1,18 @@
+:host {
+    display: block;
+}
+
+table {
+  background: white;
+  border: 1px solid #E3E3E3;
+  border-top: 2px solid #E3E3E3;
+  margin-top: 20px;
+}
+
+tr:hover {
+  background: #F7F7F7; 
+}
+
+.btn.btn-sm {
+    width: 80px;
+}

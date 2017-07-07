@@ -1,15 +1,37 @@
 <h3>Users</h3>
-<div class="row">
-  <div *ngFor="let user of users; let i=index">
-    <div class="clearfix" *ngIf="index % 4 == 0"></div>
-    <div class="col-sm-3">
-      <fw-panel>
-        <div class="projected-title panel-heading">
-          <h3 class="panel-title">{{ user.name }}</h3>
-        </div>
-        <app-users-panel [user]="user" [index]="i+1">
-        </app-users-panel>
-      </fw-panel>
-    </div>
-  </div>
-</div>
+<button class="btn btn-primary" (click)="create()">Create User</button>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of users">
+      <td>{{ row.id }}</td>
+      <td>{{ row.name }}</td>
+      <td>{{ row.email }}</td>
+      <td>{{ row.role }}</td>
+      <td>{{ row.status }}</td>
+      <td *ngIf="row.id != deleteId">
+        <button class="btn btn-sm btn-primary" (click)="showDetail(row.id)">Details</button>
+        <button class="btn btn-sm btn-warning" (click)="edit(row.id)">Edit</button>
+        <button class="btn btn-sm btn-danger" (click)="deleteQuestion(row.id)">Delete</button>
+      </td>
+      <td *ngIf="row.id === deleteId && !isDeleting">
+        Delete this User?
+        <button class="btn btn-sm" (click)="cancelDelete()">Cancel</button>
+        <button class="btn btn-sm btn-danger" (click)="delete(row.id)">Delete</button>
+        <p *ngIf="deleteError">{{ deleteError }}</p>
+      </td>
+      <td *ngIf="row.id === deleteId && isDeleting">
+        Deleting...
+      </td>
+    </tr>
+  </tbody>
+</table>

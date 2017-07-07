@@ -1,6 +1,6 @@
 import { IUser } from './../_view-models/user';
 import { UsersService } from './../_services/users.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,32 +9,48 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users-list.component.css']
 })
 export class UsersListComponent implements OnInit {
-  allUsers: Array<IUser>;
-  count = 0;
-  users: Array<IUser>;
+  users: Array<IUser>
+  deleteError: string;
+  deleteId: number;
+  isDeleting = false;
 
   constructor(
-    private dataService: UsersService,
-    private route: ActivatedRoute
-  ) { }
+    private usersService: UsersService,
+    private router: Router
+  ) {
+    usersService.getAll().subscribe((data) => this.users = data);
+  }
 
   ngOnInit() {
-    this.dataService.getAll().subscribe(
-      users => {
-        this.allUsers = users;
-        this.count = this.route.snapshot.params['count'];
-        this.updateList();
-      }
+  }
+
+  cancelDelete() {
+    this.isDeleting = false;
+    this.deleteId = null;
+  }
+
+  create() {
+    this.router.navigate(['/authenticated/users-detail', 0, 'create']);
+  }
+
+  delete(id: number) {
+    this.isDeleting = true;
+    this.usersService.delete(id).subscribe(
+      c => this.cancelDelete(),
+      err => { this.deleteError = err; this.isDeleting = false; }
     );
-
-    this.route.params.subscribe(params => {
-      this.count = params['count'];
-      this.updateList();
-    });
   }
 
-  updateList() {
-    this.users = this.count > 0 ? this.allUsers.slice(0, this.count) : this.allUsers;
+  deleteQuestion(id: number) {
+    this.deleteError = null;
+    this.deleteId = id;
   }
 
+  edit(id: number) {
+    this.router.navigate(['/authenticated/users-detail', id, 'edit']);
+  }
+
+  showDetail(id: number) {
+    this.router.navigate(['/authenticated/users-detail', id, 'details']);
+  }
 }

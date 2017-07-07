@@ -22,8 +22,8 @@ export const appRoutes: Routes = [
                 children: [
                     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
                     { path: 'dashboard', component: DashboardComponent },
-                    { path: 'users-view', component: UsersViewComponent },
-                    { path: 'users-list/:count', component: UsersListComponent },
+                    { path: 'users-list', component: UsersListComponent },
+                    { path: 'users-view/:count', component: UsersViewComponent },
                     { path: 'users-detail/:id/:operation', component: UsersDetailComponent },
                     { path: 'settings', component: SettingsComponent },
                 ]

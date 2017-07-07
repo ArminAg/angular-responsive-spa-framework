@@ -15,24 +15,24 @@ export let initialMenuItems: Array<IMenuItem> = [
             {
                 text: 'Select',
                 icon: 'glyphicon-expand',
-                route: 'authenticated/users-list/3',
+                route: null,
                 submenu: [
                     {
                         text: 'Top 3',
                         icon: 'glyphicon-user',
-                        route: 'authenticated/users-list/3',
+                        route: 'authenticated/users-view/3',
                         submenu: null
                     },
                     {
                         text: 'Top 5',
                         icon: 'glyphicon-user',
-                        route: 'authenticated/users-list/5',
+                        route: 'authenticated/users-view/5',
                         submenu: null
                     },
                     {
                         text: 'All Users',
                         icon: 'glyphicon-user',
-                        route: 'authenticated/users-list/0',
+                        route: 'authenticated/users-view/0',
                         submenu: null
                     }
                 ]
@@ -40,7 +40,7 @@ export let initialMenuItems: Array<IMenuItem> = [
             {
                 text: 'Users List',
                 icon: 'glyphicon-th-list',
-                route: 'authenticated/users-view',
+                route: 'authenticated/users-list',
                 submenu: null
             },
         ]
