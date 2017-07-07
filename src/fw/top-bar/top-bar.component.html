@@ -1,57 +1,15 @@
-<!--<div *ngIf="frameworkConfigService.showLanguageSelector">
-  <img class="flag-image" src="assets/flag-eng.png" alt="Flag">
-  <span>EN</span><span class="glyphicon glyphicon-chevron-down"></span>
+<div *screenBelowLarge class="title-bar-small">
+  <span class="glyphicon glyphicon-menu-hamburger" (click)="menuService.toggleLeftSideMenu()"></span>
+  <div class="small-image-holder">
+    <img class="small-image" src="assets/logo.png">
+  </div>
+  <span class="glyphicon glyphicon-option-vertical"></span>
 </div>
 
-<div *ngIf="frameworkConfigService.showUserControls">
-  <span>ARMIN</span>
-  <span class="sign-out" (click)="signOut()">SIGN OUT</span>
-</div>-->
-
-<div class="main-menu">
-  <nav>
-    <ul>
-      <li>
-        <!--<fw-menu-item *ngIf="frameworkConfigService.showLanguageSelector" [item]="item1" [ngClass]="{'vertical-menu': menuService.isVertical }"
-        [parentIsPopup]="false">
-      </fw-menu-item>
-      <fw-menu-item *ngIf="frameworkConfigService.showUserControls" [item]="item2" 
-        [parentIsPopup]="false">
-      </fw-menu-item>-->
-        <div class="main-menu-item">
-          <div [ngClass]="{'vertical-menu': menuService.isVertical }">
-            <div class="menu-item" [ngClass]="{'vertical-menu': menuService.isVertical, 'router-link-active': isActiveRoute }">
-              <span class="glyphicon {{ item1.icon }}"></span>
-              <span class="condensed-font">{{ item1.text.toUpperCase() }}</span>
-
-              <span *ngIf="item1.submenu && !parentIsPopup && !menuService.isVertical" class="glyphicon glyphicon-menu-down"></span>
-              <span *ngIf="item1.submenu && menuService.isVertical && (mouseInPopup || mouseInItem)" class="glyphicon glyphicon-menu-down"></span>
-
-            </div>
-            <fw-popup-menu *ngIf="mouseInPopup || mouseInItem" [menu]="item1.submenu" [ngClass]="{'vertical-menu': menuService.isVertical}"
-              (mouseleave)="onPopupMouseLeave($event)" (mouseenter)="onPopupMouseEnter($event)" [style.left.px]="popupLeft"
-              [style.top.px]="popupTop" @visibilityChanged>
-            </fw-popup-menu>
-          </div>
-        </div>
-        <div class="main-menu-item">
-          <div [ngClass]="{'vertical-menu': menuService.isVertical }">
-            <div class="menu-item" [ngClass]="{'vertical-menu': menuService.isVertical, 'router-link-active': isActiveRoute }">
-              <span class="glyphicon {{ item2.icon }}"></span>
-              <span class="condensed-font">{{ item2.text.toUpperCase() }}</span>
-
-              <span *ngIf="item2.submenu && !parentIsPopup && !menuService.isVertical" class="glyphicon glyphicon-menu-down"></span>
-              <span *ngIf="item2.submenu && menuService.isVertical && (mouseInPopup || mouseInItem)" class="glyphicon glyphicon-menu-down"></span>
-
-            </div>
-            <fw-popup-menu *ngIf="mouseInPopup || mouseInItem" [menu]="item2.submenu" [ngClass]="{'vertical-menu': menuService.isVertical}"
-              (mouseleave)="onPopupMouseLeave($event)" (mouseenter)="onPopupMouseEnter($event)" [style.left.px]="popupLeft"
-              [style.top.px]="popupTop" @visibilityChanged>
-            </fw-popup-menu>
-          </div>
-        </div>
-
-      </li>
-    </ul>
-  </nav>
+<div *screenLarge class="title-bar">
+  <img class="large-image" src="assets/logo.png" alt="">
+  <div class="menu-area">
+    <fw-menu *ngIf="!menuService.isVertical"></fw-menu>
+    <!--<fw-right-bar></fw-right-bar>-->
+  </div>
 </div>

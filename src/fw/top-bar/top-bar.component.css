@@ -1,104 +1,50 @@
-.main-menu {
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    flex-grow: 1;
-}
-
-.main-menu.vertical-menu {
-    display: inline-block;
-    max-width: 220px;
-    min-width: 220px;
-    flex-grow: 0;
-    background-color: white;
-    border-right: 1px solid #E3E3E3;
-    overflow: auto;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-li {
-    display: inline;
-}
-
-button {
-    margin-top: 20px;
-    margin-left: 20px;
-}
-
-button.horizontal {
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-
-.main-menu-item {
-  display: inline-block;
-  position: relative;
-  margin-left: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 0;
-  font-size: 15px;
-  line-height: 15px;
-  color: #9A9A9A;
-  cursor: pointer;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.main-menu-item:not(.parent-is-popup) {
-  width: auto;
-}
-
-.main-menu-item.vertical-menu {
+:host {
   display: block;
-  margin-left: 0;
-  color: #9A9A9A;
 }
 
-.main-menu-item.vertical-menu.in-popup {
-  padding-left: 16px;
+.title-bar {
+  flex-grow: 1;
+  display: flex;
+  min-height: 80px;
+  border-bottom: 2px solid #E3E3E3;
+}
+
+.large-image {
+  height: 50px;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding-left: 20px;
+}
+
+.menu-area {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-right: 20px;
+}
+
+.title-bar-small {
+  flex-grow: 1;
+  display: flex;
+  min-height: 56px;
+  border-bottom: 2px solid #E3E3E3;
+}
+
+.small-image-holder {
+  flex-grow: 1;
+}
+
+.small-image {
+  height: 50px;
 }
 
 span {
-  pointer-events: none;
-}
-
-.glyphicon {
-  top: 1px;
-  font-size: 14px;
-  margin-right: 4px;
-  margin-left: 8px;
-}
-
-.glyphicon:first-of-type {
-  margin-left: 0;
-}
-
-.glyphicon:last-child {
-  margin-right: 0;
-}
-
-.glyphicon-menu-left,
-.glyphicon-menu-right,
-.glyphicon-menu-down {
-  float: right;
-}
-
-.menu-item {
-  padding: 31px 20px 31px 20px;
-}
-
-.menu-item.vertical-menu {
-  padding: 31px 20px 31px 20px;
-}
-
-.router-link-active,
-.menu-item:hover {
-  background-color: #F7F7F7;
-  color: #335F7D;
+  margin-left: 10px;
+  margin-right: 20px;
+  font-size: 25px;
+  line-height: 50px;
 }
