@@ -15,7 +15,6 @@ import { AuthenticatedUserComponent } from './authenticated-user/authenticated-u
 import { AuthGuard } from './_services/auth-guard.service';
 import { UserService } from './_services/user.service';
 import { UserApi } from 'fw/users/user-api';
-import { ImagePanelComponent } from './panels/image-panel/image-panel.component';
 import { UsersViewComponent } from './users-view/users-view.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { UsersDetailComponent } from './users-detail/users-detail.component';
@@ -27,7 +26,6 @@ import { UsersPanelComponent } from './panels/users-panel/users-panel.component'
     DashboardComponent,
     SettingsComponent,
     AuthenticatedUserComponent,
-    ImagePanelComponent,
     UsersViewComponent,
     UsersListComponent,
     UsersDetailComponent,

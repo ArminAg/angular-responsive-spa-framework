@@ -10,7 +10,7 @@ export let initialMenuItems: Array<IMenuItem> = [
     {
         text: 'Users',
         icon: 'glyphicon-user',
-        route: 'authenticated/users-view',
+        route: null,
         submenu: [
             {
                 text: 'Select',
@@ -18,42 +18,24 @@ export let initialMenuItems: Array<IMenuItem> = [
                 route: 'authenticated/users-list/3',
                 submenu: [
                     {
-                        text: 'Admins',
+                        text: 'Top 3',
                         icon: 'glyphicon-user',
-                        route: 'authenticated/users-detail/USA',
+                        route: 'authenticated/users-list/3',
                         submenu: null
                     },
                     {
-                        text: 'Groups',
+                        text: 'Top 5',
                         icon: 'glyphicon-user',
-                        route: 'authenticated/users-detail/India',
+                        route: 'authenticated/users-list/5',
                         submenu: null
                     },
                     {
-                        text: 'Brands',
+                        text: 'All Users',
                         icon: 'glyphicon-user',
-                        route: 'authenticated/users-detail/Switzerland',
+                        route: 'authenticated/users-list/0',
                         submenu: null
                     }
                 ]
-            },
-            {
-                text: 'Top 3',
-                icon: 'glyphicon-user',
-                route: 'authenticated/users-list/3',
-                submenu: null
-            },
-            {
-                text: 'Top 5',
-                icon: 'glyphicon-user',
-                route: 'authenticated/users-list/5',
-                submenu: null
-            },
-            {
-                text: 'All Users',
-                icon: 'glyphicon-user',
-                route: 'authenticated/users-list/0',
-                submenu: null
             },
             {
                 text: 'Users List',
@@ -61,31 +43,6 @@ export let initialMenuItems: Array<IMenuItem> = [
                 route: 'authenticated/users-view',
                 submenu: null
             },
-        ]
-    },
-    {
-        text: 'Countries',
-        icon: 'glyphicon-flag',
-        route: null,
-        submenu: [
-            {
-                text: 'Top 3',
-                icon: 'glyphicon-flag',
-                route: 'authenticated/country-list/3',
-                submenu: null
-            },
-            {
-                text: 'Top 10',
-                icon: 'glyphicon-flag',
-                route: 'authenticated/country-list/10',
-                submenu: null
-            },
-            {
-                text: 'All',
-                icon: 'glyphicon-flag',
-                route: 'authenticated/country-list/0',
-                submenu: null
-            }
         ]
     },
     {
