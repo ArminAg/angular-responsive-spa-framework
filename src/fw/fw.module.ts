@@ -1,3 +1,5 @@
+import { DoughnutChartComponent } from './charts/doughnut-chart/doughnut-chart.component';
+import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
 import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
 import { FooterComponent } from './footer/footer.component';
 import { PanelComponent } from './panels/panel/panel.component';
@@ -53,7 +55,9 @@ import { ScreenLargeDirective } from './_directives/screen-large.directive';
     DynamicFormComponent,
     DynamicFieldComponent,
     PanelComponent,
-    PieChartComponent
+    PieChartComponent,
+    DoughnutChartComponent,
+    BarChartComponent
   ],
   providers: [
     FrameworkConfigService,
@@ -66,7 +70,9 @@ import { ScreenLargeDirective } from './_directives/screen-large.directive';
     PanelComponent,
     ScreenLargeDirective,
     ScreenBelowLargeDirective,
-    PieChartComponent
+    PieChartComponent,
+    DoughnutChartComponent,
+    BarChartComponent
   ]
 })
 export class FwModule { }
