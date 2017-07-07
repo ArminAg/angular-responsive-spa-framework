@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Rx';
 import { UserApi } from 'fw/users/user-api';
 
 @Injectable()
-export class UserService implements UserApi {
+export class UserManagementService implements UserApi {
     isAuthenticated = true;
 
     constructor(private router: Router) { }

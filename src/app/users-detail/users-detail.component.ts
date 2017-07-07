@@ -11,43 +11,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersDetailComponent implements OnInit {
   user: IUser;
-  userDefinition: Array<FieldDefinition> = [
-    {
-      key: 'id',
-      type: 'number',
-      isId: true,
-      label: 'Id',
-      required: true
-    },
-    {
-      key: 'name',
-      type: 'string',
-      isId: false,
-      label: 'Full Name',
-      required: true
-    },
-    {
-      key: 'email',
-      type: 'string',
-      isId: false,
-      label: 'Email',
-      required: true
-    },
-    {
-      key: 'role',
-      type: 'string',
-      isId: false,
-      label: 'Role',
-      required: true
-    },
-    {
-      key: 'status',
-      type: 'string',
-      isId: false,
-      label: 'Status',
-      required: true
-    }
-  ];
   errorMessage: string;
   operation: string;
   userId: number;

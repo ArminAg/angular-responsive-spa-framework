@@ -2,7 +2,7 @@
 
 <fw-dynamic-form
   [vm]="user"
-  [vmDefinition]="userDefinition"
+  [vmDefinition]="dataService.userDefinition"
   [operation]="operation"
   [errorMessage]="errorMessage"
   (update)="update($event)"

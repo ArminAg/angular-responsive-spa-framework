@@ -1,5 +1,4 @@
 import { UsersService } from './_services/users.service';
-import { AppDataService } from './_services/app-data.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -13,7 +12,7 @@ import { appRoutes } from './app.routing';
 import { AuthenticatedUserComponent } from './authenticated-user/authenticated-user.component';
 
 import { AuthGuard } from './_services/auth-guard.service';
-import { UserService } from './_services/user.service';
+import { UserManagementService } from './_services/user-management.service';
 import { UserApi } from 'fw/users/user-api';
 import { UsersViewComponent } from './users-view/users-view.component';
 import { UsersListComponent } from './users-list/users-list.component';
@@ -37,10 +36,9 @@ import { UsersPanelComponent } from './panels/users-panel/users-panel.component'
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    UserService,
-    { provide: UserApi, useExisting: UserService },
+    UserManagementService,
+    { provide: UserApi, useExisting: UserManagementService },
     AuthGuard,
-    AppDataService,
     UsersService
   ],
   bootstrap: [AppComponent]

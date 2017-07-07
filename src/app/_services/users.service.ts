@@ -1,3 +1,4 @@
+import { FieldDefinition } from './../../fw/dynamic-forms/field-definition';
 import { Observable } from 'rxjs/Observable';
 import { IUser } from './../_view-models/user';
 import { Injectable } from '@angular/core';
@@ -15,6 +16,44 @@ export class UsersService {
         { id: 7, name: 'Irina Welo', email: 'irina.welo@email.com', role: 'Support', status: 'Pending' },
         { id: 8, name: 'Jean Michel', email: 'jean.michel@email.com', role: 'Read only', status: 'Disabled' }
     ];
+
+    userDefinition: Array<FieldDefinition> = [
+    {
+      key: 'id',
+      type: 'number',
+      isId: true,
+      label: 'Id',
+      required: true
+    },
+    {
+      key: 'name',
+      type: 'string',
+      isId: false,
+      label: 'Full Name',
+      required: true
+    },
+    {
+      key: 'email',
+      type: 'string',
+      isId: false,
+      label: 'Email',
+      required: true
+    },
+    {
+      key: 'role',
+      type: 'string',
+      isId: false,
+      label: 'Role',
+      required: true
+    },
+    {
+      key: 'status',
+      type: 'string',
+      isId: false,
+      label: 'Status',
+      required: true
+    }
+  ];
 
     constructor() { }
 
