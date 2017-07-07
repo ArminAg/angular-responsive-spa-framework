@@ -16,6 +16,10 @@
   padding: 20px;
 }
 
+.sign-in-form > img {
+  margin-bottom: 20px;
+}
+
 a {
   line-height: 32px;
 }

@@ -26,20 +26,17 @@ export class TopBarComponent implements OnInit {
         text: 'ENG',
         icon: 'glyphicon-flag',
         route: null,
-        action: null,
         submenu: [
             {
                 text: 'GER',
                 icon: 'glyphicon-flag',
                 route: null,
-                action: null,
                 submenu: null
             },
             {
                 text: 'FRA',
                 icon: 'glyphicon-flag',
                 route: null,
-                action: null,
                 submenu: null
             },
         ]
@@ -48,20 +45,17 @@ export class TopBarComponent implements OnInit {
         text: 'Armin',
         icon: 'glyphicon-user',
         route: null,
-        action: null,
         submenu: [
             {
                 text: 'Settings',
                 icon: 'glyphicon-cog',
                 route: 'authenticated/country-maint',
-                action: null,
                 submenu: null
             },
             {
                 text: 'Sign Out',
                 icon: 'glyphicon-lock',
                 route: 'authenticated/settings',
-                action: null,
                 submenu: null
             }
         ]

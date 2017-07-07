@@ -1,0 +1,14 @@
+<div class="row">
+  <div *ngFor="let user of users; let i=index">
+    <div class="clearfix" *ngIf="index % 4 == 0"></div>
+    <div class="col-sm-3">
+      <fw-panel>
+        <div class="projected-title panel-heading">
+          <h3 class="panel-title">{{ user.name }}</h3>
+        </div>
+        <app-users-panel [user]="user" [index]="i+1">
+        </app-users-panel>
+      </fw-panel>
+    </div>
+  </div>
+</div>

@@ -31,7 +31,7 @@ export class MenuItemComponent implements OnInit {
   mouseInItem = false;
   mouseInPopup = false;
   popupLeft = 0;
-  popupTop = 78;
+  popupTop = 79;
 
   constructor(
     private router: Router,

@@ -1,3 +1,6 @@
+import { UsersListComponent } from './users-list/users-list.component';
+import { UsersDetailComponent } from './users-detail/users-detail.component';
+import { UsersViewComponent } from './users-view/users-view.component';
 import { Routes } from '@angular/router';
 
 import { SettingsComponent } from './settings/settings.component';
@@ -5,9 +8,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SignInComponent } from './../fw/users/sign-in/sign-in.component';
 import { RegisterUserComponent } from './../fw/users/register-user/register-user.component';
 import { AuthenticatedUserComponent } from './authenticated-user/authenticated-user.component';
-import { CountryMaintComponent } from './country-maint/country-maint.component';
-import { CountryDetailComponent } from './country-detail/country-detail.component';
-import { CountryListComponent } from './country-list/country-list.component';
 
 import { AuthGuard } from './_services/auth-guard.service';
 
@@ -22,9 +22,9 @@ export const appRoutes: Routes = [
                 children: [
                     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
                     { path: 'dashboard', component: DashboardComponent },
-                    { path: 'country-list/:count', component: CountryListComponent },
-                    { path: 'country-detail/:id/:operation', component: CountryDetailComponent },
-                    { path: 'country-maint', component: CountryMaintComponent },
+                    { path: 'users-view', component: UsersViewComponent },
+                    { path: 'users-list/:count', component: UsersListComponent },
+                    { path: 'users-detail/:id/:operation', component: UsersDetailComponent },
                     { path: 'settings', component: SettingsComponent },
                 ]
             }

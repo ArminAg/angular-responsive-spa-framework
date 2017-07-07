@@ -16,6 +16,10 @@
     padding: 20px;
 }
 
+.register-form > img {
+  margin-bottom: 20px;
+}
+
 h4 {
     margin-bottom: 20px;
 }

@@ -8,9 +8,9 @@
   <span *ngIf="item.submenu && parentIsPopup && !menuService.isVertical" 
     class="glyphicon glyphicon-menu-right"></span>
   <span *ngIf="item.submenu && menuService.isVertical && !(mouseInPopup || mouseInItem)" 
-    class="glyphicon glyphicon-menu-left"></span>
-  <span *ngIf="item.submenu && menuService.isVertical && (mouseInPopup || mouseInItem)" 
     class="glyphicon glyphicon-menu-down"></span>
+  <span *ngIf="item.submenu && menuService.isVertical && (mouseInPopup || mouseInItem)" 
+    class="glyphicon glyphicon-menu-up"></span>
     
 </div>
 <fw-popup-menu 

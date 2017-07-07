@@ -1,18 +1,33 @@
 <div class="register-form">
   <img src="./assets/logo.png" width="320">
-  <h4>Register for New Account</h4>
-  <form>
+  <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" novalidate>
     <div class="form-group">
-      <input class="form-control" type="text" name="username" placeholder="Requested User Name">
+      <label for="username">Username</label>
+      <input class="form-control" type="text" name="username" placeholder="Requested User Name" required ngModel #username="ngModel">
+      <div [hidden]="username.valid || username.pristine" class="alert alert-danger">
+        User Name is required.
+      </div>
     </div>
     <div class="form-group">
-      <input class="form-control" type="text" name="email" placeholder="Email">
+      <label for="email">Email</label>
+      <input class="form-control" type="text" name="email" placeholder="Email" required ngModel #email="ngModel">
+      <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+        Email is required.
+      </div>
     </div>
     <div class="form-group">
-      <input class="form-control" type="password" name="password" placeholder="Password">
+      <label for="password">Password</label>
+      <input class="form-control" type="password" name="password" placeholder="Password" required ngModel #password="ngModel">
+      <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+        Password is required.
+      </div>
     </div>
     <div class="form-group">
-      <input class="form-control" type="password" name="password-again" placeholder="Password Confirm">
+      <label for="password-confirm">Password Confirm</label>
+      <input class="form-control" type="password" name="password-confirm" placeholder="Password Confirm" required ngModel #passwordConfirm="ngModel">
+      <div [hidden]="passwordConfirm.valid || passwordConfirm.pristine" class="alert alert-danger">
+        Confirm Password is required.
+      </div>
     </div>
     <button class="btn btn-default" routerLink="/sign-in" routerLinkActive="active">Cancel</button>
     <button class="btn btn-primary">Register</button>

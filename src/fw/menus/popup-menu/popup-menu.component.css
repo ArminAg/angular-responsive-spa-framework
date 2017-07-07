@@ -5,6 +5,7 @@
   background-color: white;
   border: 1px solid #E3E3E3;
   border-top: 2px solid #335F7D;
+  z-index: 1;
 }
 
 :host(.vertical-menu) {
@@ -14,5 +15,4 @@
   background-color: transparent;
   border: none;
   box-shadow: none;
-  padding: 2px 0 0 0;
 }

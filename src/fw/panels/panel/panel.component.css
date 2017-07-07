@@ -1,8 +1,11 @@
 :host {
     display: flex;
     flex-direction: column;
-    margin: 10px;
-    margin-bottom: 20px;
-    background-color: #eee;
-    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.panel-primary > .panel-heading {
+    color: white;
+    background-color: #0F82C2;
+    border-color: #0F82C2;
 }
