@@ -1,3 +1,4 @@
+import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
 import { FooterComponent } from './footer/footer.component';
 import { PanelComponent } from './panels/panel/panel.component';
 import { NgModule } from '@angular/core';
@@ -5,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { ChartModule } from 'angular2-chartjs';
 
 import { TitleBarComponent } from './title-bar/title-bar.component';
 import { ContentComponent } from './content/content.component';
@@ -31,7 +34,8 @@ import { ScreenLargeDirective } from './_directives/screen-large.directive';
     RouterModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartModule
   ],
   declarations: [
     FrameworkBodyComponent,
@@ -48,7 +52,8 @@ import { ScreenLargeDirective } from './_directives/screen-large.directive';
     RegisterUserComponent,
     DynamicFormComponent,
     DynamicFieldComponent,
-    PanelComponent
+    PanelComponent,
+    PieChartComponent
   ],
   providers: [
     FrameworkConfigService,
@@ -60,7 +65,8 @@ import { ScreenLargeDirective } from './_directives/screen-large.directive';
     DynamicFormComponent,
     PanelComponent,
     ScreenLargeDirective,
-    ScreenBelowLargeDirective
+    ScreenBelowLargeDirective,
+    PieChartComponent
   ]
 })
 export class FwModule { }
