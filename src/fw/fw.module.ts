@@ -1,3 +1,5 @@
+import { HeaderComponent } from './header/header.component';
+import { MainComponent } from './main/main.component';
 import { RightBarComponent } from './right-bar/right-bar.component';
 import { DoughnutChartComponent } from './charts/doughnut-chart/doughnut-chart.component';
 import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
@@ -12,8 +14,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ChartModule } from 'angular2-chartjs';
 
-import { TopBarComponent } from './top-bar/top-bar.component';
-import { ContentComponent } from './content/content.component';
 import { FrameworkBodyComponent } from './framework-body/framework-body.component';
 import { MenuComponent } from './menus/menu/menu.component';
 import { MenuItemComponent } from './menus/menu-item/menu-item.component';
@@ -41,9 +41,9 @@ import { ScreenLargeDirective } from './_directives/screen-large.directive';
   ],
   declarations: [
     FrameworkBodyComponent,
-    ContentComponent,
+    MainComponent,
+    HeaderComponent,
     RightBarComponent,
-    TopBarComponent,
     FooterComponent,
     ScreenLargeDirective,
     ScreenBelowLargeDirective,

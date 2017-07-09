@@ -1,0 +1,48 @@
+:host {
+  display: block;
+}
+
+.header-big {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  min-height: 80px;
+  border-bottom: 2px solid #E3E3E3;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.main-menu {
+  flex: 2;
+}
+
+.header-logo,
+.right-menu {
+  flex: 1;
+}
+
+.logo-image {
+  height: 50px;
+  width: auto;
+}
+
+.header-small {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  min-height: 56px;
+  border-bottom: 2px solid #E3E3E3;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.small-image-holder {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+span {
+  font-size: 25px;
+  line-height: 50px;
+}

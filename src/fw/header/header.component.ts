@@ -3,11 +3,11 @@ import { ScreenService } from './../_services/screen.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'fw-top-bar',
-  templateUrl: './top-bar.component.html',
-  styleUrls: ['./top-bar.component.css']
+  selector: 'fw-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
-export class TopBarComponent implements OnInit {
+export class HeaderComponent implements OnInit {
 
   constructor(
     private screenService: ScreenService,

@@ -1,0 +1,19 @@
+<header *screenLarge class="header-big">
+  <div class="header-logo">
+    <img class="logo-image" src="assets/logo.png" alt="">
+  </div>
+  <div class="main-menu">
+    <fw-menu *ngIf="!menuService.isVertical"></fw-menu>
+  </div>
+  <div class="right-menu">
+    <!--<fw-right-bar *ngIf="!menuService.isVertical"></fw-right-bar>-->
+  </div>
+</header>
+
+<header *screenBelowLarge class="header-small">
+  <span class="glyphicon glyphicon-menu-hamburger" (click)="menuService.toggleLeftSideMenu()"></span>
+  <div class="small-image-holder">
+    <img class="logo-image" src="assets/logo.png">
+  </div>
+  <span class="glyphicon glyphicon-option-vertical"></span>
+</header>

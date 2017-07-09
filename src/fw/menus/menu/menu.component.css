@@ -1,8 +1,7 @@
 :host {
-    display: flex; 
-    align-items: center; 
+    display: flex;
     justify-content: center;
-    flex-grow: 1;
+    flex: 1;
 }
 
 :host(.vertical-menu) {
