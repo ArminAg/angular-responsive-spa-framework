@@ -1,11 +1,10 @@
-.main-menu {
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    flex-grow: 1;
+:host {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
 }
 
-.main-menu.vertical-menu {
+:host(.vertical-menu) {
     display: inline-block;
     max-width: 220px;
     min-width: 220px;
@@ -23,16 +22,6 @@ ul {
 
 li {
     display: inline;
-}
-
-button {
-    margin-top: 20px;
-    margin-left: 20px;
-}
-
-button.horizontal {
-    margin-left: 20px;
-    margin-bottom: 20px;
 }
 
 .main-menu-item {
@@ -101,4 +90,14 @@ span {
 .menu-item:hover {
   background-color: #F7F7F7;
   color: #335F7D;
+}
+
+.popup-menu {
+  position: absolute;
+  display: inline-block;
+  width: 125px;
+  background-color: white;
+  border: 1px solid #E3E3E3;
+  border-top: 2px solid #335F7D;
+  z-index: 1;
 }

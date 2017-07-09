@@ -2,8 +2,10 @@ import { Router, NavigationEnd } from '@angular/router';
 import { IMenuItem, MenuService } from './../_services/menu.service';
 import { UserApi } from 'fw/users/user-api';
 import { FrameworkConfigService } from './../_services/framework-config.service';
-import { Component, OnInit, ElementRef, Renderer, trigger,
-    transition, style, animate, HostBinding, Input, HostListener } from '@angular/core';
+import {
+    Component, OnInit, ElementRef, Renderer, trigger,
+    transition, style, animate, HostBinding, Input, HostListener
+} from '@angular/core';
 
 @Component({
     selector: 'fw-right-bar',
@@ -41,31 +43,16 @@ export class RightBarComponent implements OnInit {
             },
         ]
     };
-    item2: IMenuItem = {
-        text: 'Armin',
-        icon: 'glyphicon-user',
-        route: null,
-        submenu: [
-            {
-                text: 'Settings',
-                icon: 'glyphicon-cog',
-                route: 'authenticated/country-maint',
-                submenu: null
-            },
-            {
-                text: 'Sign Out',
-                icon: 'glyphicon-lock',
-                route: 'authenticated/settings',
-                submenu: null
-            }
-        ]
-    };
 
-    @HostBinding('class.parent-is-popup')
+    // @HostBinding('class.parent-is-popup')
     parentIsPopup = false;
     isActiveRoute = false;
 
     mouseInItem = false;
+    mouseInItem1 = false;
+    mouseInItem2 = false;
+    mouseInPopup1 = false;
+    mouseInPopup2 = false;
     mouseInPopup = false;
     popupLeft = 0;
     popupTop = 78;
@@ -80,72 +67,69 @@ export class RightBarComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.checkActiveRoute(this.router.url);
+    }
 
-        this.router.events
-            .subscribe((event) => {
-                if (event instanceof NavigationEnd) {
-                    this.checkActiveRoute(event.url);
-                    // console.log(event.url + ' ' + this.item.route + ' ' + this.isActiveRoute);
+    onMenuItemMouseEnter(event): void {
+        switch (event.target.id) {
+            case 'language-menu': {
+                this.mouseInItem1 = true;
+                if (this.parentIsPopup) {
+                    this.popupLeft = 173;
+                    this.popupTop = -2;
                 }
-            });
-    }
-
-
-
-    signOut() {
-        this.userApi.signOut();
-    }
-
-    checkActiveRoute(route: string) {
-        this.isActiveRoute = (route == '/' + this.item1.route);
-    }
-
-    @HostListener('click', ['$event'])
-    onClick(event): void {
-        event.stopPropagation();
-        if (this.item1.submenu) {
-            if (this.menuService.isVertical) {
-                this.mouseInPopup = !this.mouseInPopup;
+                break;
             }
-        } else if (this.item1.route) {
-            // Force horizontal menus to close by sending a mouseleave event
-            let newEvent = new MouseEvent('mouseleave', { bubbles: true });
-            this.renderer.invokeElementMethod(this.el.nativeElement, 'dispatchEvent', [newEvent]);
-            this.router.navigate(['/' + this.item1.route]);
+            case 'user-menu': {
+                this.mouseInItem2 = true;
+                if (this.parentIsPopup) {
+                    this.popupLeft = 173;
+                    this.popupTop = -2;
+                }
+                break;
+            }
+        }
+    }
+
+    onMenuItemMouseLeave(event): void {
+        console.log(event.target.id);
+        switch (event.target.id) {
+            case 'language-menu': {
+                this.mouseInPopup1 = false;
+                this.mouseInPopup2 = false;
+                break;
+            }
+            case 'user-menu': {
+                this.mouseInPopup1 = false;
+                this.mouseInPopup2 = false;
+                break;
+            }
         }
     }
 
     onPopupMouseEnter(event): void {
-        if (!this.menuService.isVertical) {
-            this.mouseInPopup = true;
+        console.log(event.target.id);
+        switch (event.target.id) {
+            case 'language-popup': {
+                this.mouseInPopup1 = true;
+                break;
+            }
+            case 'user-popup': {
+                this.mouseInPopup2 = true;
+                break;
+            }
         }
     }
 
     onPopupMouseLeave(event): void {
         if (!this.menuService.isVertical) {
-            this.mouseInPopup = false;
+            this.mouseInItem1 = false;
+            this.mouseInPopup1 = false;
+            this.mouseInItem2 = false;
+            this.mouseInPopup2 = false;
         }
     }
 
-    @HostListener('mouseleave', ['$event'])
-    onMouseLeave(event): void {
-        if (!this.menuService.isVertical) {
-            this.mouseInItem = false;
-        }
+    signOut() {
+        this.userApi.signOut();
     }
-
-    @HostListener('mouseenter')
-    onMouseEnter(): void {
-        if (!this.menuService.isVertical) {
-            if (this.item1.submenu) {
-                this.mouseInItem = true;
-                if (this.parentIsPopup) {
-                    this.popupLeft = 173;
-                    this.popupTop = -2;
-                }
-            }
-        }
-    }
-
 }

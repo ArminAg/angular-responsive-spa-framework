@@ -8,50 +8,44 @@
   <span class="sign-out" (click)="signOut()">SIGN OUT</span>
 </div>-->
 
-<div class="main-menu">
-  <nav>
-    <ul>
-      <li>
-        <!--<fw-menu-item *ngIf="frameworkConfigService.showLanguageSelector" [item]="item1" [ngClass]="{'vertical-menu': menuService.isVertical }"
-        [parentIsPopup]="false">
-      </fw-menu-item>
-      <fw-menu-item *ngIf="frameworkConfigService.showUserControls" [item]="item2" 
-        [parentIsPopup]="false">
-      </fw-menu-item>-->
-        <div class="main-menu-item">
-          <div [ngClass]="{'vertical-menu': menuService.isVertical }">
-            <div class="menu-item" [ngClass]="{'vertical-menu': menuService.isVertical, 'router-link-active': isActiveRoute }">
-              <span class="glyphicon {{ item1.icon }}"></span>
-              <span class="condensed-font">{{ item1.text.toUpperCase() }}</span>
 
-              <span *ngIf="item1.submenu && !parentIsPopup && !menuService.isVertical" class="glyphicon glyphicon-menu-down"></span>
-              <span *ngIf="item1.submenu && menuService.isVertical && (mouseInPopup || mouseInItem)" class="glyphicon glyphicon-menu-down"></span>
-
-            </div>
-            <fw-popup-menu *ngIf="mouseInPopup || mouseInItem" [menu]="item1.submenu" [ngClass]="{'vertical-menu': menuService.isVertical}"
-              (mouseleave)="onPopupMouseLeave($event)" (mouseenter)="onPopupMouseEnter($event)" [style.left.px]="popupLeft"
-              [style.top.px]="popupTop" @visibilityChanged>
-            </fw-popup-menu>
-          </div>
+<nav>
+  <ul>
+    <li *ngIf="frameworkConfigService.showLanguageSelector">
+      <div class="main-menu-item">
+        <div id="language-menu" class="menu-item" (mouseleave)="onMenuItemMouseLeave($event)" (mouseenter)="onMenuItemMouseEnter($event)">
+          <span class="glyphicon glyphicon-flag"></span>
+          <span class="condensed-font">ENG</span>
+          <span class="glyphicon glyphicon-menu-down"></span>
         </div>
-        <div class="main-menu-item">
-          <div [ngClass]="{'vertical-menu': menuService.isVertical }">
-            <div class="menu-item" [ngClass]="{'vertical-menu': menuService.isVertical, 'router-link-active': isActiveRoute }">
-              <span class="glyphicon {{ item2.icon }}"></span>
-              <span class="condensed-font">{{ item2.text.toUpperCase() }}</span>
-
-              <span *ngIf="item2.submenu && !parentIsPopup && !menuService.isVertical" class="glyphicon glyphicon-menu-down"></span>
-              <span *ngIf="item2.submenu && menuService.isVertical && (mouseInPopup || mouseInItem)" class="glyphicon glyphicon-menu-down"></span>
-
+        <div class="popup-menu" id="language-popup" *ngIf="mouseInPopup1 || mouseInItem1" (mouseleave)="onPopupMouseLeave($event)"
+          (mouseenter)="onPopupMouseEnter($event)" [style.left.px]="popupLeft" @visibilityChanged [style.top.px]="popupTop">
+          <li>
+            <div class="menu-item">
+              <span class="glyphicon glyphicon-flag"></span>
+              <span class="condensed-font">GER</span>
             </div>
-            <fw-popup-menu *ngIf="mouseInPopup || mouseInItem" [menu]="item2.submenu" [ngClass]="{'vertical-menu': menuService.isVertical}"
-              (mouseleave)="onPopupMouseLeave($event)" (mouseenter)="onPopupMouseEnter($event)" [style.left.px]="popupLeft"
-              [style.top.px]="popupTop" @visibilityChanged>
-            </fw-popup-menu>
-          </div>
+          </li>
         </div>
-
-      </li>
-    </ul>
-  </nav>
-</div>
+      </div>
+    </li>
+    <li *ngIf="frameworkConfigService.showUserControls">
+      <div class="main-menu-item" >
+        <div id="user-menu" class="menu-item" (mouseleave)="onMenuItemMouseLeave($event)" (mouseenter)="onMenuItemMouseEnter($event)">
+          <span class="glyphicon glyphicon-user"></span>
+          <span class="condensed-font">ARMIN</span>
+          <span class="glyphicon glyphicon-menu-down"></span>
+        </div>
+        <div id="user-popup" class="popup-menu" *ngIf="mouseInPopup2 || mouseInItem2" (mouseleave)="onPopupMouseLeave($event)" (mouseenter)="onPopupMouseEnter($event)"
+          [style.left.px]="popupLeft" [style.top.px]="popupTop" @visibilityChanged>
+          <li>
+            <div class="menu-item" (click)="signOut()">
+              <span class="glyphicon glyphicon-lock"></span>
+              <span class="condensed-font">SIGN OUT</span>
+            </div>
+          </li>
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>
